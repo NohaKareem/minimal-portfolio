@@ -7,11 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Noha Kareem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .cta {
+            animation: changeBg 3s infinite;
+        }
+
+        /* #e0f1ff, #c7e5ff, #addaff, #94ceff */
+
+        @keyframes changeBg {
+            0% {
+                background-color: #ffeee0
+            }
+
+            10% {
+                background-color: #ffe0c7;
+            }
+
+            20% {
+                background-color: #ffd2ad;
+            }
+
+            50% {
+                background-color: #e8c3a4
+            }
+
+            60% {
+                background-color: #e2c7b0
+            }
+
+            70% {
+                background-color: #f5d5bb
+            }
+
+
+            100% {
+                background-color: #ffeee0
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="flex items-center justify-center h-screen">
+    <!-- #f5d5bb -->
+    <div class="flex items-center justify-center h-screen" id="container" style="background-color: #ffeee0;">
         <p class="w-1/3">Hello there! I'm Noha Kareem, a front-end developer who loves art and nature. I currently work
             with
             vue.js, nuxt,
@@ -25,9 +63,13 @@
             teaching assistant subjects including
             data structures,
             compilers and computer graphics.
-            I enjoy building impactful, shareable experiences. If you have an interesting project you'd like to
+            I enjoy building impactful, shareable experiences and am keen to deliver a <span
+                class="font-bold">thoughtful and accessible
+                UX</span>. I
+            believe listening is always the first step to a resonating experience, and prioritize it in my process. If
+            you have an interesting project you'd like to
             collaborate on, please feel free to <a class="underline hover:text-blue-400"
-                href="mailto:noha.k.kareem@gmail.com">reach out</a>!
+                href="mailto:noha.k.kareem@gmail.com" id="ctaContact">reach out</a>!
 
             <br />
             <br />
@@ -35,8 +77,16 @@
                 href="https://nohakareem.github.io/breather-app/">breather</a>.
         </p>
     </div>
-
-    <script src="index.js"></script>
+    <script>
+        const ctaContact = document.querySelector('#ctaContact')
+        const body = document.querySelector('#container')
+        ctaContact.addEventListener('mouseover', () => {
+            body.classList.add('cta')
+        })
+        ctaContact.addEventListener('mouseout', () => {
+            body.classList.remove('cta')
+        })
+    </script>
 </body>
 
 </html>
